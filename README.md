@@ -205,7 +205,7 @@ En el loop principal (`loop()`), el código:
 ## 📜 Código para su consulta  
 📌 Puedes consultar el código completo en el siguiente archivo:  
 
-[`📂 Codigo ESP32 Maestro`](ruta/del/archivo.ino)  
+[`📂 Codigo ESP32 Maestro`](https://github.com/VictorPM19/Actividades-esp32/tree/main/Wifi/Codigo_wifi)  
 
 
 
