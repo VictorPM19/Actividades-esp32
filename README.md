@@ -191,7 +191,7 @@ Para habilitar la comunicación **ESP-NOW**, el ESP32 Maestro:
 En el loop principal (`loop()`), el código:  
 
 1. Asigna valores a la estructura de datos:  
-   - **`a`** → Se asigna `"NOMBRE: LUIS REY"`.  
+   - **`a`** → Se asigna `"NOMBRE: Tu nombre"`.  
    - **`b`** → Se genera un número aleatorio entre `1` y `20`.  
    - **`c`** → Se asigna el valor `1.23`.  
    - **`d`** → Se asigna `"Hello"`.  
