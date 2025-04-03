@@ -38,5 +38,49 @@ Este código permite que un **ESP32** se conecte a una red **WiFi** y envíe dat
 📌 Puedes ver el código aquí:  
 ➡️ [Codigo_wifi.ino](https://github.com/VictorPM19/Actividades-esp32/tree/main/Wifi/Codigo_wifi)
 
+# 📡 Conexión de Múltiples ESP32 con ESP-NOW  
 
+ESP-NOW es un protocolo de comunicación inalámbrica desarrollado por **Espressif**, que permite conectar **dos o más ESP32** sin necesidad de WiFi ni Internet.  
+
+---
+
+## ✅ ¿Cómo Funciona ESP-NOW?  
+- Utiliza un **protocolo similar al WiFi**, pero con menor latencia y menor consumo de energía.  
+- Permite comunicación **punto a punto** o en una **red de múltiples dispositivos**.  
+- Se basa en una arquitectura **Maestro-Esclavo** o **Multicast**, donde un ESP32 puede enviar y recibir datos de varios otros ESP32.  
+- **No necesita un router ni acceso a Internet** para funcionar.  
+
+---
+
+## 📌 Ventajas de ESP-NOW  
+✅ **Baja latencia**: Transmisión de datos casi instantánea.  
+✅ **Bajo consumo de energía**: Ideal para dispositivos de bajo consumo.  
+✅ **No requiere WiFi**: Funciona sin router ni red local.  
+✅ **Conexión con hasta 20 dispositivos**.  
+✅ **Seguro**: Soporta encriptación para mayor seguridad.  
+
+---
+
+## 🔗 Aplicaciones de ESP-NOW  
+🚗 **Automatización del hogar**: Control de luces, sensores y actuadores sin depender de WiFi.  
+📡 **Monitoreo de sensores**: Recoger datos de sensores remotos y enviarlos a un nodo central.  
+🎮 **Controles remotos**: Comunicación rápida para robots o dispositivos inalámbricos.  
+
+---
+# 📡 Comunicación ESP-NOW: Maestro y Esclavo  
+
+ESP-NOW permite la comunicación inalámbrica entre múltiples **ESP32** sin necesidad de WiFi. Se puede configurar en una arquitectura **Maestro-Esclavo**, donde un ESP32 **Maestro** envía datos a uno o varios ESP32 **Esclavos**.  
+
+---
+
+## 🖼️ **Funcionamiento**  
+![Mi imagen](Imagenes/esp32Now.png)
+
+## ✅ ¿Cómo funciona la comunicación Maestro-Esclavo en ESP-NOW?  
+- El **Maestro** envía datos a uno o varios **Esclavos**.  
+- Los **Esclavos** solo reciben datos y responden si están configurados para ello.  
+- No es necesario que los dispositivos estén conectados a WiFi.  
+- Es posible enviar datos a **múltiples dispositivos** al mismo tiempo.  
+
+---
 
