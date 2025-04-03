@@ -84,3 +84,61 @@ ESP-NOW permite la comunicación inalámbrica entre múltiples **ESP32** sin nec
 
 ---
 
+# 📡 ESP-NOW: ESP32 Esclavo (Receptor)  
+
+Este documento describe el funcionamiento del código de un **ESP32 configurado como dispositivo Esclavo** utilizando el protocolo de comunicación **ESP-NOW**.  
+
+El ESP32 **recibe datos desde un ESP32 Maestro** y los procesa para su visualización en el **Monitor Serie**.  
+
+---
+
+## 📌 Esp32 Esclavo  
+
+### 1️⃣ **Inclusión de librerías**  
+Se incluyen las librerías necesarias para manejar la comunicación ESP-NOW:  
+
+- `WiFi.h`: Permite configurar el ESP32 en modo Wi-Fi.  
+- `esp_now.h`: Habilita la comunicación ESP-NOW entre dispositivos ESP32.  
+
+---
+
+### 2️⃣ **Definición de la estructura de datos**  
+Se define una estructura **`struct_message`** que contiene cinco variables:  
+
+- **`a`** → Cadena de caracteres (`char[32]`).  
+- **`b`** → Número entero (`int`).  
+- **`c`** → Número decimal (`float`).  
+- **`d`** → Texto dinámico (`String`).  
+- **`e`** → Valor booleano (`true/false`).  
+
+Esta estructura permite enviar múltiples tipos de datos en un solo mensaje.  
+
+---
+
+### 3️⃣ **Inicialización del ESP-NOW**  
+Para que el ESP32 pueda recibir datos, se realizan los siguientes pasos:  
+
+1. Se configura el ESP32 en **modo estación (`WIFI_STA`)** para habilitar ESP-NOW.  
+2. Se inicializa **ESP-NOW**.  
+3. Se registra una función **callback (`OnDataRecv`)** que se ejecuta automáticamente cuando el dispositivo recibe datos.  
+
+---
+
+### 4️⃣ **Recepción y procesamiento de datos**  
+Cuando el **ESP32 Esclavo recibe datos**, el sistema:  
+
+1. **Copia la información** recibida en una variable de tipo `struct_message`.  
+2. **Muestra los datos en el Monitor Serie**, incluyendo caracteres, números y valores booleanos.  
+3. **Realiza operaciones matemáticas** con los datos:  
+   - **Suma 1** al valor del entero `b`.  
+   - **Suma 0.22** al valor flotante `c`.  
+4. **Imprime los resultados procesados** en la consola.  
+
+---
+
+## 📜 **Código para su consulta**  
+📌 **Puedes consultar el código completo en el siguiente archivo:**  
+
+[`📂 Codigo ESP32 Esclavo`](ruta/del/archivo.ino)  
+
+
