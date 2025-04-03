@@ -35,7 +35,8 @@ Este código permite que un **ESP32** se conecte a una red **WiFi** y envíe dat
 
 ---
 
-📌 Puedes ver el código completo aquí:  
-➡️ [Codigo Wifi completo](Wifi/Codigo_wifi.ino)
+📌 Puedes ver el código aquí:  
+➡️ [Codigo_wifi.ino](https://github.com/VictorPM19/Actividades-esp32/tree/main/Wifi/Codigo_wifi)
+
 
 
