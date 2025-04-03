@@ -1,6 +1,11 @@
-# 💻 Codigo para conexion a internet mediante esp32 
+# 📌 Explicación del Código para ESP32  
 
 Este código permite que un **ESP32** se conecte a una red **WiFi** y envíe datos a un servidor web mediante una solicitud **HTTP POST**.  
+
+---
+
+## 🖼️ **Funcionamiento**  
+![Mi imagen](Imagenes/funcionamiento.png)
 
 ---
 
@@ -30,6 +35,7 @@ Este código permite que un **ESP32** se conecte a una red **WiFi** y envíe dat
 
 ---
 
-  
-  
+📌 Puedes ver el código completo aquí:  
+➡️ [Codigo Wifi completo](Wifi/Codigo_wifi.ino)
+
 
