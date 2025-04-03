@@ -141,4 +141,71 @@ Cuando el **ESP32 Esclavo recibe datos**, el sistema:
 
 [`📂 Codigo ESP32 Esclavo`](ruta/del/archivo.ino)  
 
+# 📡 ESP-NOW: ESP32 Maestro (Transmisor)  
+
+Este documento describe el funcionamiento del código de un **ESP32 configurado como dispositivo Maestro**, utilizando el protocolo de comunicación **ESP-NOW**.  
+
+El ESP32 **envía datos a un ESP32 Esclavo** y verifica si la transmisión fue exitosa o fallida.  
+
+---
+
+## 📌 Descripción del Código  
+
+### 1️⃣ **Inclusión de librerías**  
+Se incluyen las librerías necesarias para manejar la comunicación ESP-NOW:  
+
+- `WiFi.h`: Permite configurar el ESP32 en modo Wi-Fi.  
+- `esp_now.h`: Habilita la comunicación ESP-NOW entre dispositivos ESP32.  
+
+---
+
+### 2️⃣ **Definición de la dirección MAC del receptor**  
+Se define la dirección **MAC del ESP32 Esclavo** para poder enviarle datos.  
+
+
+### 3️⃣ Definición de la estructura de datos  
+Se define una estructura **`struct_message`** con los datos a enviar:  
+
+- **`a`** → Cadena de caracteres (`char[32]`).  
+- **`b`** → Número entero (`int`).  
+- **`c`** → Número decimal (`float`).  
+- **`d`** → Texto dinámico (`String`).  
+- **`e`** → Valor booleano (`true/false`).  
+
+Esta estructura debe coincidir con la del **ESP32 Esclavo** para que los datos sean interpretados correctamente.  
+
+---
+
+### 4️⃣ Inicialización del ESP-NOW  
+Para habilitar la comunicación **ESP-NOW**, el ESP32 Maestro:  
+
+1. Se configura en modo estación (`WIFI_STA`).  
+2. Se inicializa **ESP-NOW** y se verifica si hubo errores.  
+3. Se registra la función de callback **`OnDataSent`**, que muestra si el paquete se envió correctamente o si falló.  
+4. Se configura la dirección MAC del receptor (`broadcastAddress`).  
+5. Se agrega el receptor (peer) a la lista de dispositivos ESP-NOW.  
+
+---
+
+### 5️⃣ Envío de datos  
+En el loop principal (`loop()`), el código:  
+
+1. Asigna valores a la estructura de datos:  
+   - **`a`** → Se asigna `"NOMBRE: LUIS REY"`.  
+   - **`b`** → Se genera un número aleatorio entre `1` y `20`.  
+   - **`c`** → Se asigna el valor `1.23`.  
+   - **`d`** → Se asigna `"Hello"`.  
+   - **`e`** → Se asigna `false`.  
+2. Envía los datos al **ESP32 Esclavo** usando **`esp_now_send()`**.  
+3. Verifica si la transmisión fue exitosa e imprime el resultado en el **monitor serie**.  
+4. Espera 2 segundos antes de volver a enviar otro paquete de datos.  
+
+---
+
+## 📜 Código para su consulta  
+📌 Puedes consultar el código completo en el siguiente archivo:  
+
+[`📂 Codigo ESP32 Maestro`](ruta/del/archivo.ino)  
+
+
 
